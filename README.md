@@ -49,7 +49,14 @@ Compare files with checksums:
 md5sum 0.data/md5sums_*.txt
 # 495a242412612329a2f7d42b54c792cf  0.data/md5sums_local.txt
 # 495a242412612329a2f7d42b54c792cf  0.data/md5sums_original.txt
-# So the checksums most be identical across both files
+# So the checksums stored in both files, as well as the file names, must be identical between these files
+```
+
+## Store a backup of the data on the IEB server
+```bash
+mkdir /global/scratch2/mlammer1/aervi-ee-rnaseq
+rsync -ah --bwlimit=1500 --info=progress2 ./0.data/* /global/scratch2/mlammer1/aervi-ee-rnaseq/
+# Expected runtime at 1.5 MB/s is about 17.5 hours
 ```
 
 ## Quality control of raw data
