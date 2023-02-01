@@ -9,6 +9,8 @@ Aphidius ervi EE transcriptomics
 git config --global user.email "marklammers@wwu.de"
 git config --global user.name "mlammer1"
 git config --global credential.helper store
+
+## setup git preferences
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last 'log -l HEAD'
 git config --global alias.fulllog 'log --all --oneline --graph -20'
