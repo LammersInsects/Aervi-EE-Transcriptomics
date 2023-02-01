@@ -6,6 +6,13 @@
 git config --global user.email "marklammers@wwu.de"
 git config --global user.name "mlammer1"
 git config --global credential.helper store
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -l HEAD'
+git config --global alias.fulllog 'log --all --oneline --graph -20'
+git config --global alias.ls 'ls-files'
+git config --global rerere.enabled true
+git config --global pull.rebase true
+git config --global core.autocrlf true
 
 # create folders
 mkdir -p /home/mlammer1/Documents/aervi-ee-transcriptomics
