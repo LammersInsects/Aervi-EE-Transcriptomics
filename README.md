@@ -5,6 +5,23 @@ Aphidius ervi EE transcriptomics
 - Repo started: 01.02.2023 ('%d.%m.%Y')
 - Last update:  01.02.2023
 
+# A flexible fluctuating but targeted todo-list
+
+- [ ] Data handling
+  - [x] Verify data integrity
+  - [x] Inspect MultiQC output
+  - [ ] Generate new multiqc results per tissue type
+- [ ] Data processing
+  - [ ] Choose software for adapter trimming
+  - [ ] Run adapter trimming on all samples
+  - [ ] Choose software for mapping reads to the reference genome
+  - [ ] Copy latest version of the reference genome into 0.data
+  - [ ] Benchmark mapping to reference genome on `jgant3`
+- [ ] DGE analysis
+  - [ ] Choose pipeline
+  - [ ] Calculate FPKM
+
+
 # Project Setup
 
 See `1.code/project.setup.md`
@@ -89,9 +106,7 @@ Some conclusions on sequence data quality:
   - Sequence quality histograms look excellent
   - Up to 36% of sequences have adapter content towards the end of the read
 
-Quite a spread in certain variables. Tasks:
-- [ ] Would be interesting to see the results per type of sample.
-- [ ] Adapter trimming is required.
+Quite a spread in certain variables. Two tasks added.
 
 # Data processing
 
