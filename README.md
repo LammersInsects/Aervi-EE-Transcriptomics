@@ -63,7 +63,7 @@ rsync -ah --bwlimit=1500 --info=progress2 ./0.data/* /global/scratch2/mlammer1/a
 
 The sequencing center provided `multiqc` output with the two data sets.
 
-See `0.data/mlammers_ML01_*/FastQC/multiqc_report.html`
+See `0.data/mlammers_ML01_*/FastQC/multiqc_report.html`.
 Copy the files to `3.results`, add to repo, and inspect:
 ```bash
 cp -v 0.data/mlammers_ML01_Mai11/FastQC/multiqc_report.html 3.results/multiqc_report_Mai11.html
