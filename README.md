@@ -71,6 +71,27 @@ cp -v 0.data/mlammers_ML01_Juni1/FastQC/multiqc_report.html 3.results/multiqc_re
 git add -f 3.results/multiqc_report_Mai11.html 3.results/multiqc_report_Juni1.html
 ```
 
+Some conclusions on sequence data quality:
+- Juni1:
+  - 19 samples
+  - %Dups range 36.6-77.5% -> also reflected in plots of overrepresented sequences
+  - $GC range 32-42%
+  - Read length always 101bp
+  - 4.2-9.1M reads per sample
+  - Sequence quality histograms look excellent
+  - Up to 29% of sequences have adapter content towards the end of the read
+- Mai11:
+  - 312 samples
+  - %Dups range 34.8-92.5% -> also reflected in plots of overrepresented sequences
+  - %GC range 32-48%
+  - Read length always 101bp
+  - 2.8-10.7M reads per sample
+  - Sequence quality histograms look excellent
+  - Up to 36% of sequences have adapter content towards the end of the read
+Quite a spread in certain variables.
+[ ] Would be interesting to see the results per type of sample.
+[ ] Adapter trimming is required.
+
 # Data processing
 
 ## Adapter trimming
