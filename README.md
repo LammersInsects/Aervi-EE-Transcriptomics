@@ -88,7 +88,9 @@ Some conclusions on sequence data quality:
   - 2.8-10.7M reads per sample
   - Sequence quality histograms look excellent
   - Up to 36% of sequences have adapter content towards the end of the read
-Quite a spread in certain variables.
+
+Quite a spread in certain variables. Tasks:
+
 [ ] Would be interesting to see the results per type of sample.
 [ ] Adapter trimming is required.
 
