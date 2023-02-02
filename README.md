@@ -90,9 +90,8 @@ Some conclusions on sequence data quality:
   - Up to 36% of sequences have adapter content towards the end of the read
 
 Quite a spread in certain variables. Tasks:
-
-[ ] Would be interesting to see the results per type of sample.
-[ ] Adapter trimming is required.
+- [ ] Would be interesting to see the results per type of sample.
+- [ ] Adapter trimming is required.
 
 # Data processing
 
