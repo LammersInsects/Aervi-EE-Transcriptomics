@@ -39,3 +39,11 @@ git branch -M main
 git remote add origin https://github.com/LammersInsects/Aervi-EE-Transcriptomics.git
 git push -u origin main
 ```
+
+# Enable R on jgant3
+```bash
+source /usr/share/modules/init/bash  # enables the module
+module use /global/projects/programs/modules/
+module load dev/R
+```
+
