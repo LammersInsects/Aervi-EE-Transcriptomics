@@ -5,12 +5,14 @@ Aphidius ervi EE transcriptomics
 - Repo started: 01.02.2023 ('%d.%m.%Y')
 - Last update:  01.02.2023
 
-# A flexible fluctuating but targeted todo-list
+# A flexibly fluctuating but targeted todo-list
 
 - [ ] Data handling
   - [x] Verify data integrity
   - [x] Inspect MultiQC output
+  - [x] Make new FastQC and MultiQC reports
   - [x] Import sample information and match with file names
+  - [ ] Make separate MultiQC reports per tissue type
   - [ ] Generate new multiqc results per tissue type
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
@@ -18,6 +20,7 @@ Aphidius ervi EE transcriptomics
   - [ ] Choose software for mapping reads to the reference genome
   - [ ] Copy latest version of the reference genome into 0.data
   - [ ] Benchmark mapping to reference genome on `jgant3`
+  - [ ] Map all reads to the reference genome
 - [ ] DGE analysis
   - [ ] Choose pipeline
   - [ ] Calculate FPKM
@@ -29,12 +32,12 @@ See `1.code/project.setup.md`
 
 # Sample information
 
-- Species: Aphidius ervi 'Katz'
+- Species: Aphidius ervi strain 'Katz'
 - Experiment: Multi-generational tissue-specific transcriptomic differences due to host adaptation.
 - Input material: 156 RNA extracts of varying quality from insect tissue samples.
 - Tissues: heads, ovaries, venom glands.
 - Method: Lexogen QuantSeq 3′ mRNA-Seq (Illumina), see `https://www.lexogen.com/docs/quantseq/`.
-- Data: Illumina RNAseq.
+- Data: Illumina RNAseq, 312+19 libraries.
 
 See also `0.data/mlammers_ML01_*/Sample_Names.tab` for specific samples names.
 
@@ -110,6 +113,30 @@ Some conclusions on sequence data quality:
   - Up to 36% of sequences have adapter content towards the end of the read
 
 Quite a spread in certain variables. Two tasks added.
+
+### Compare data quality per tissue type
+
+```bash
+# Do new FastQC analysis so that I also have the .zip output
+#Mai11
+mkdir 0.data/mlammers_ML01_Mai11/own-fastqc
+fastqc --outdir 0.data/mlammers_ML01_Mai11/own-fastqc \
+  --threads 16 0.data/mlammers_ML01_Mai11/A00*.fastq.gz
+#Juni1
+mkdir 0.data/mlammers_ML01_Juni1/own-fastqc
+fastqc --outdir 0.data/mlammers_ML01_Juni1/own-fastqc \
+  --threads 16 0.data/mlammers_ML01_Juni1/A00*.fastq.gz
+
+# Run multiqc on all files together
+pip install --user multiqc
+ls -lha 0.data/mlammers_ML01_*/own-fastqc/A00*_fastqc.zip | less
+mkdir 3.results/own_multiqc_reports
+python3 -m multiqc --interactive -o 3.results/own_multiqc_reports \
+  0.data/mlammers_ML01_*/own-fastqc/A00*_fastqc.zip
+
+# Run multiqc per tissue type
+#TODO
+```
 
 # Data processing
 
