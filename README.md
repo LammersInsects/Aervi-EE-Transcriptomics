@@ -10,6 +10,7 @@ Aphidius ervi EE transcriptomics
 - [ ] Data handling
   - [x] Verify data integrity
   - [x] Inspect MultiQC output
+  - [ ] Import sample information and match with file names
   - [ ] Generate new multiqc results per tissue type
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
