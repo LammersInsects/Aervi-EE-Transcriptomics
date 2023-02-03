@@ -10,7 +10,7 @@ Aphidius ervi EE transcriptomics
 - [ ] Data handling
   - [x] Verify data integrity
   - [x] Inspect MultiQC output
-  - [ ] Import sample information and match with file names
+  - [x] Import sample information and match with file names
   - [ ] Generate new multiqc results per tissue type
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
@@ -37,6 +37,8 @@ See `1.code/project.setup.md`
 - Data: Illumina RNAseq.
 
 See also `0.data/mlammers_ML01_*/Sample_Names.tab` for specific samples names.
+
+This information is also collated in `0.data/Sample.info.tab` and `0.data/Files.info.tab` after running `1.code/collect.sample.info.R`.
 
 # Handling and assessing raw data
 
