@@ -3,8 +3,10 @@
 cat('Currently in',getwd(),'\n')
 
 # Load sample names tables
-df<-rbind(read.table('0.data/mlammers_ML01_Juni1/Sample_Names.tab', sep='\t', header=T, row.names=NULL, stringsAsFactors=F),
-          read.table('0.data/mlammers_ML01_Mai11/Sample_Names.tab', sep='\t', header=T, row.names=NULL, stringsAsFactors=F))
+df<-rbind(read.table('0.data/mlammers_ML01_Juni1/Sample_Names.tab',
+                     sep='\t', header=T, row.names=NULL, stringsAsFactors=F),
+          read.table('0.data/mlammers_ML01_Mai11/Sample_Names.tab',
+                     sep='\t', header=T, row.names=NULL, stringsAsFactors=F))
 colnames(df)<-c('FileID','Sample.Name')
 cat('Found',nrow(df),'samples\n')
 
@@ -17,8 +19,10 @@ table(df$Sample)
 # Append file info to the list of file paths names of the corresponding fastq file
 
 ## Load file names
-files<-data.frame(File.name=c(paste('0.data/mlammers_ML01_Juni1/', list.files('0.data/mlammers_ML01_Juni1/', pattern='A00'), sep=''),
-                              paste('0.data/mlammers_ML01_Mai11/', list.files('0.data/mlammers_ML01_Mai11/', pattern='A00'), sep='')))
+files<-data.frame(File.name=c(paste('0.data/mlammers_ML01_Juni1/',
+                                    list.files('0.data/mlammers_ML01_Juni1/', pattern='A00'), sep=''),
+                              paste('0.data/mlammers_ML01_Mai11/',
+                                    list.files('0.data/mlammers_ML01_Mai11/', pattern='A00'), sep='')))
 cat('Found',nrow(files),'files\n')
 
 ## Extract FileIDs
