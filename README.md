@@ -38,21 +38,23 @@ See [`1.code/project.setup.md`](1.code/project.setup.md)
 - Experiment: Multi-generational tissue-specific transcriptomic differences due to host adaptation.
 - Input material: 156 RNA extracts of varying quality from insect tissue samples.
 - Tissues: heads, ovaries, venom glands.
-- Method: Lexogen QuantSeq 3′ mRNA-Seq (Illumina), see `https://www.lexogen.com/docs/quantseq/`.
+- Method: Lexogen QuantSeq 3′ mRNA-Seq (Illumina), see [the Lexogen Quantseq website](https://www.lexogen.com/docs/quantseq/).
 - Data: 96GB of Illumina RNAseq data in FASTQ format, 312+19 libraries.
 
 See also `0.data/mlammers_ML01_*/Sample_Names.tab` for specific samples names.
 
-This information is also collated in `0.data/Sample.info.tab` and `0.data/Files.info.tab` after running `1.code/collect.sample.info.R`.
+This information is also collated in [`0.data/Sample.info.tab`](0.data/Sample.info.tab) and [`0.data/Files.info.tab`](0.data/Files.info.tab) after running [`1.code/collect.sample.info.R`](1.code/collect.sample.info.R).
+The file [`0.data/Files-Samples.info.tab`](0.data/Files-Samples.info.tab) is a merge of the separate files.
 
 # Handling and assessing raw data
 
 ## Retrieve data
 
-See `0.data/instructions_big_data_set.txt`
-and `0.data/instructions_small_data_set.txt`.
+For the instructions on the first, big, Mai11 dataset, see [`0.data/instructions_big_data_set.txt`](0.data/instructions_big_data_set.txt).
 
-The small data set (Juni1) contains data on 19 samples which were resequenced.
+For the instruction on the second, small, Juni1 dataset, see [`0.data/instructions_small_data_set.txt`](0.data/instructions_small_data_set.txt).
+
+The small data set (Juni1) contains data on 19 samples which were resequenced because ***CHECK***.
 Interestingly, there are no _L002_ files for these runs.
 
 ## Check data integrity
@@ -99,7 +101,7 @@ cp -v 0.data/mlammers_ML01_Juni1/FastQC/multiqc_report.html 3.results/multiqc_re
 git add -f 3.results/multiqc_report_Mai11.html 3.results/multiqc_report_Juni1.html
 ```
 
-See `1.code/compare.fastqc.per.tissue.md` for producing MultiQC output per tissue type.
+See [`1.code/compare.fastqc.per.tissue.md`](1.code/compare.fastqc.per.tissue.md) for producing MultiQC output per tissue type.
 
 See `3.results/own_multiqc_reports_*` for MultiQC output per tissue type.
 
