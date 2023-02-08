@@ -17,10 +17,12 @@ Aphidius ervi EE transcriptomics
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
   - [ ] Run adapter trimming on all samples
-  - [ ] Choose software for mapping reads to the reference genome
+  - [ ] Re-run FastQC and MultiQC to compare adapter trimming efficacy
+  - [x] Choose software for mapping reads to the reference genome
   - [ ] Copy latest version of the reference genome into 0.data
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
+  - [ ] Summarize mapping rates, overall and per tissue type
 - [ ] DGE analysis
   - [ ] Choose pipeline
   - [ ] Calculate FPKM
@@ -126,4 +128,4 @@ Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
 
 ## Mapping to reference genome
 
-TODO
+TODO wit HISAT2
