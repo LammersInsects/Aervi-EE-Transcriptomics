@@ -14,7 +14,7 @@ colnames(df)<-c('FileID','Sample.Name','Path')
 cat('Found',nrow(df),'samples\n')
 
 test<-as.data.frame(table(df$FileID))
-cat(nrow(test),'samples have multiple files :')
+cat(nrow(test),'samples have multiple files : \n')
 multiple<-df[df$FileID %in% test$Var1[test$Freq>1],]
 print(multiple[order(multiple$FileID),])
 
@@ -34,7 +34,7 @@ files<-data.frame(File.name=c(paste('0.data/mlammers_ML01_Juni1/',
 cat('Found',nrow(files),'files\n')
 
 ## Extract FileIDs and other information
-files<-cbind(files,t(sapply(strsplit(files, split = '_'),`[`,3:7)))
+files<-cbind(files,t(sapply(strsplit(files$File.name, split = '_'),`[`,3:7)))
 colnames(files)<-c('File.name','A00','FileID','S','L','R')
 files$A00<-gsub('Mai11/','', files$A00, fixed = T)
 files$A00<-gsub('Juni1/','', files$A00, fixed = T)
