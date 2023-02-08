@@ -1,4 +1,4 @@
-Aphidius ervi EE transcriptomics
+*Aphidius ervi* EE transcriptomics
 ================================
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
@@ -7,18 +7,18 @@ Aphidius ervi EE transcriptomics
 
 # A flexibly fluctuating but targeted todo-list
 
-- [x] Data handling
-  - [x] Verify data integrity
-  - [x] Inspect MultiQC output
-  - [x] Make new FastQC and MultiQC reports
-  - [x] Import sample information and match with file names
-  - [x] Make separate MultiQC reports per tissue type
-  - [x] Generate new MultiQC results per tissue type
+- [x] ~~Data handling~~
+  - [x] ~~Verify data integrity~~
+  - [x] ~~Inspect MultiQC output~~
+  - [x] ~~Make new FastQC and MultiQC reports~~
+  - [x] ~~Import sample information and match with file names~~
+  - [x] ~~Make separate MultiQC reports per tissue type~~
+  - [x] ~~Generate new MultiQC results per tissue type~~
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
   - [ ] Run adapter trimming on all samples
   - [ ] Re-run FastQC and MultiQC to compare adapter trimming efficacy
-  - [x] Choose software for mapping reads to the reference genome
+  - [x] ~~Choose software for mapping reads to the reference genome~~
   - [ ] Copy latest version of the reference genome into 0.data
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
@@ -30,11 +30,11 @@ Aphidius ervi EE transcriptomics
 
 # Project Setup
 
-See `1.code/project.setup.md`
+See [`1.code/project.setup.md`](1.code/project.setup.md)
 
 # Sample information
 
-- Species: Aphidius ervi strain 'Katz'
+- Species: *Aphidius ervi* strain 'Katz'
 - Experiment: Multi-generational tissue-specific transcriptomic differences due to host adaptation.
 - Input material: 156 RNA extracts of varying quality from insect tissue samples.
 - Tissues: heads, ovaries, venom glands.
