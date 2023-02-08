@@ -97,27 +97,26 @@ cp -v 0.data/mlammers_ML01_Juni1/FastQC/multiqc_report.html 3.results/multiqc_re
 git add -f 3.results/multiqc_report_Mai11.html 3.results/multiqc_report_Juni1.html
 ```
 
-Some conclusions on sequence data quality:
-- Juni1:
-  - 19 samples
-  - %Dups range 36.6-77.5% -> also reflected in plots of overrepresented sequences
-  - $GC range 32-42%
-  - Read length always 101bp
-  - 4.2-9.1M reads per sample
-  - Sequence quality histograms look excellent
-  - Up to 29% of sequences have adapter content towards the end of the read
-- Mai11:
-  - 312 samples
-  - %Dups range 34.8-92.5% -> also reflected in plots of overrepresented sequences
-  - %GC range 32-48%
-  - Read length always 101bp
-  - 2.8-10.7M reads per sample
-  - Sequence quality histograms look excellent
-  - Up to 36% of sequences have adapter content towards the end of the read
-
-Quite a spread in certain variables. Two tasks added.
-
 See `1.code/compare.fastqc.per.tissue.md` for producing MultiQC output per tissue type.
+
+See `3.results/own_multiqc_reports_*` for MultiQC output per tissue type.
+
+Overview of sequence data quality:
+
+Variable | Mai11 | Juni1 | Heads | Ovaries | Venom glands
+---------|-------|-------|-------|---------|-------------
+Nr samples | 312 | 19 | 108 | 118 | 105
+% duplicates | 34.8-92.5 | 36.6-77.5 | 38.6-67.1 | 34.8-86.1 | 72.4-92.5%
+%GC | 32-48 | 32-42 | 32-40 | 32-44 | 35-48%
+Read length | 101 | 101 | 101 | 101 | 101
+Reads per sample | 2.8-10.7M | 4.2-9.1M | 3.5-9.3M | 2.8-10.7M | 4.4-8.5M
+Mean seq quality | Excellent | Excellent | Excellent | Excellent | 172694 dips to 27.7
+Adapter content start | Negligible | Negligible | Negligible | Negligible | Negligible
+Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
+
+- Quite a spread in certain variables!
+- Based on duplication levels, the venom glands may on average be the poorest data sets.
+- Adapter trimming may correct for disparity, but some differences per tissue type are expected to remain.
 
 # Data processing
 
