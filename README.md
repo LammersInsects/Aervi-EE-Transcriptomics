@@ -7,13 +7,13 @@ Aphidius ervi EE transcriptomics
 
 # A flexibly fluctuating but targeted todo-list
 
-- [ ] Data handling
+- [x] Data handling
   - [x] Verify data integrity
   - [x] Inspect MultiQC output
   - [x] Make new FastQC and MultiQC reports
   - [x] Import sample information and match with file names
   - [x] Make separate MultiQC reports per tissue type
-  - [ ] Generate new multiqc results per tissue type
+  - [x] Generate new MultiQC results per tissue type
 - [ ] Data processing
   - [ ] Choose software for adapter trimming
   - [ ] Run adapter trimming on all samples
