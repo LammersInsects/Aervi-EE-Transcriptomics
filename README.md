@@ -151,15 +151,16 @@ wc -l 0.data/Files.info.*
 for TISSUE in heads ovaries venom;
 do
   echo "Collecting input files for" $TISSUE;
-  TIMES=$(wc -l 0.data/Files.info.$TISSUE.tab | cut -f1 -d' '
+  TIMES=$(wc -l 0.data/Files.info.$TISSUE.tab | cut -f1 -d' ');
+  echo "Found" $TIMES "files";
   ls $(paste <(cat 0.data/Files.info.$TISSUE.tab | cut -f1) \
     <(yes "own-fastqc/" | head -n $TIMES) \
     <(cat 0.data/Files.info.$TISSUE.tab | cut -f4) \
     <(yes "_" | head -n $TIMES) \
     <(cat 0.data/Files.info.$TISSUE.tab | cut -f2) \
     <(yes "*_fastqc.zip" | head -n $TIMES) \
-    --delimiters '') | sort | uniq >tmp
-  python3 -m multiqc --interactive -o 3.results/own_multiqc_reports_$TISSUE $(cat tmp)
+    --delimiters '') | sort | uniq >tmp;
+  python3 -m multiqc --interactive -o 3.results/own_multiqc_reports_$TISSUE $(cat tmp);
 done;
 ```
 
