@@ -29,19 +29,26 @@ See the [github source page of trimmomatic](https://github.com/usadellab/Trimmom
 
 SE mode for Juni1 data set:
 ```bash
+INFILE1=0.data/mlammers_ML01_Juni1/A006850201_172476_S21_L001_R1_001.fastq.gz
+OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE .fastq.gz).trimmed.fastq.gz
 java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 16 -phred33 \
-  input_file.fastqz \
-  output_file.fastqz \
+  $INFILE1 \
+  $OUTFILE \
   ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+# Worked! Took about 1 minute
 ```
 
 PE mode for Mai11 data set:
 ```bash
+INFILE1=0.data/mlammers_ML01_Mai11/A006850198_172407_S137_L001_R1_001.fastq.gz
+INFILE2=${INFILE1/L001/L002}
+OUTFILE=0.data/mlammers_ML01_Mai11/$(basename $INFILE1 .fastq.gz).trimmed
 java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 16 -phred33 \
-  input_forward.fq.gz input_reverse.fq.gz \
-  output_forward_paired.fq.gz output_forward_unpaired.fq.gz \
-  output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz \
+  $INFILE1 $INFILE2 \
+  $OUTFILE.forward_paired.fastq.gz $OUTFILE.forward_unpaired.fastq.gz \
+  $OUTFILE.reverse_paired.fastq.gz $OUTFILE.reverse_unpaired.fastq.gz \
   ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+# Worked! Took about 1 minute
 ```
 
 # Run `trimmomatic` on all data with a simple for loop
