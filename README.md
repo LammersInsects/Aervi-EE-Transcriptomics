@@ -132,7 +132,20 @@ Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
 
 ## Re-run FastQC & MultiQC on trimmed fastq reads
 
-#TODO
+See [`1.code/fastqc.after.trimming.md`](1.code/fastqc.after.trimming.md).
+
+Overview of sequence data quality improvement:
+
+Variable | All before trimming | All after trimming
+---------|---------------------|-------------------
+Nr samples | 339 |
+% duplicates | 34.8-92.5 |
+%GC | 32-48 |
+Read length | 101 |
+Reads per sample | 2.8-10.7M |
+Mean seq quality | Excellent |
+Adapter content start | Negligible |
+Adapter content end | 5.8-36.4% |
 
 ## Mapping to reference genome
 
