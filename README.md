@@ -15,7 +15,7 @@
   - [x] ~~Make separate MultiQC reports per tissue type~~
   - [x] ~~Generate new MultiQC results per tissue type~~
 - [ ] Data processing
-  - [ ] Choose software for adapter trimming
+  - [x] ~~Choose software for adapter trimming~~
   - [ ] Run adapter trimming on all samples
   - [ ] Re-run FastQC and MultiQC to compare adapter trimming efficacy
   - [x] ~~Choose software for mapping reads to the reference genome~~
@@ -91,9 +91,10 @@ rsync -ah --bwlimit=1500 --info=progress2 ./0.data/* /global/scratch2/mlammer1/a
 
 ## Quality control of raw data
 
-The sequencing center provided `multiqc` output with the two data sets.
+- Base calling quality scores are recorded in phred33 format, i.e. capital letters represent top quality.
+- The sequencing center provided `multiqc` output with the two data sets.
+  - See `0.data/mlammers_ML01_*/FastQC/multiqc_report.html`.
 
-See `0.data/mlammers_ML01_*/FastQC/multiqc_report.html`.
 Copy the files to `3.results`, add to repo, and inspect:
 ```bash
 cp -v 0.data/mlammers_ML01_Mai11/FastQC/multiqc_report.html 3.results/multiqc_report_Mai11.html
@@ -126,7 +127,12 @@ Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
 
 ## Adapter trimming
 
-(if necessary)
+- Since adapters are present towards the end of up to 36% of the reads, we must run adapter trimming.
+  - See [`1.code/trim.adapters.md`](1.code/trim.adapters.md).
+
+## Re-run FastQC & MultiQC on trimmed fastq reads
+
+#TODO
 
 ## Mapping to reference genome
 
