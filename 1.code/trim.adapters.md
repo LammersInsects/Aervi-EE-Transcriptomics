@@ -49,6 +49,7 @@ fastqc --outdir 0.data/mlammers_ML01_Juni1/fastqc-trimmed \
   --threads 16 0.data/mlammers_ML01_Juni1/A006850201_172517_S27_L001_R1_001.trimmed.fastq.gz
 python3 -m multiqc -f --interactive -o 3.results/own_multiqc_reports_trimmed \
   0.data/mlammers_ML01_*/fastqc-trimmed/A00*_fastqc.zip
+# The adapter content at the end of the reads has dropped from 29% to 9.3%. That is good enough. Adapt the scripts accordingly.
 ```
 
 PE mode for Mai11 data set:
@@ -60,7 +61,7 @@ java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 16 -phred
   $INFILE1 $INFILE2 \
   $OUTFILE.forward_paired.fastq.gz $OUTFILE.forward_unpaired.fastq.gz \
   $OUTFILE.reverse_paired.fastq.gz $OUTFILE.reverse_unpaired.fastq.gz \
-  ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+  ILLUMINACLIP:/home/mlammer1/software/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
 # Worked! Took about 1 minute
 ```
 
@@ -73,11 +74,11 @@ TOTAL=$(cat 0.data/Files.info.tab | grep Juni | wc -l)
 for INFILE1 in $(cat 0.data/Files.info.tab | grep Juni | cut -f1);
 do
   let COUNT+=1
-  echo Running file $COUNT of $TOTAL ...
+  echo Starting file $COUNT of $TOTAL at $(date) ...
   OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE1 .fastq.gz).trimmed.fastq.gz
   java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 16 -phred33 \
     $INFILE1 \
     $OUTFILE \
-    ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+    ILLUMINACLIP:/home/mlammer1/software/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
 done | tee -a 4.logs/trim.adapters.Juni1.txt 2>&1
 ```
