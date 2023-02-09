@@ -30,7 +30,7 @@ See the [github source page of trimmomatic](https://github.com/usadellab/Trimmom
 SE mode for Juni1 data set:
 ```bash
 INFILE1=0.data/mlammers_ML01_Juni1/A006850201_172476_S21_L001_R1_001.fastq.gz
-OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE .fastq.gz).trimmed.fastq.gz
+OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE1 .fastq.gz).trimmed.fastq.gz
 java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 16 -phred33 \
   $INFILE1 \
   $OUTFILE \
@@ -53,4 +53,18 @@ java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 16 -phred
 
 # Run `trimmomatic` on all data with a simple for loop
 
-#TODO
+SE mode for Juni1 data set:
+```bash
+COUNT=0
+TOTAL=$(cat 0.data/Files.info.tab | grep Juni | wc -l)
+for INFILE1 in $(cat 0.data/Files.info.tab | grep Juni | cut -f1);
+do
+  let COUNT+=1
+  echo Running file $COUNT of $TOTAL ...
+  OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE1 .fastq.gz).trimmed.fastq.gz
+  java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 16 -phred33 \
+    $INFILE1 \
+    $OUTFILE \
+    ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+done
+```
