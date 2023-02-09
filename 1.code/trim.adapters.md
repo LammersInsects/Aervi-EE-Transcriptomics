@@ -24,7 +24,11 @@ Read2:
 They have been saved in [`0.data/adapters.fasta`](0.data/adapters.fasta).
 
 - Running `trimmomatic` with this set has little effect on the adapter content in the Juni1 data set.
-- Found that sequence GCACACGTCTGAACTCCAGTCAC is overrepresented in the data. This is the reverse complement of the Illumina TruSeq Universal Adapter sequence. Added this to the adapter list.
+- Found that sequence GCACACGTCTGAACTCCAGTCAC is overrepresented in the data. This is the reverse complement of the Illumina TruSeq Universal Adapter sequence.
+  - Added this to the adapter list.
+  - This also did not have any effect.
+- Try it with the adapters listed in TruSeq3-PE-2.fa
+
 
 # Test adapter trimming on a single data set with `trimmomatic`
 
@@ -32,13 +36,19 @@ See the [github source page of trimmomatic](https://github.com/usadellab/Trimmom
 
 SE mode for Juni1 data set:
 ```bash
-INFILE1=0.data/mlammers_ML01_Juni1/A006850201_172476_S21_L001_R1_001.fastq.gz
+INFILE1=0.data/mlammers_ML01_Juni1/A006850201_172517_S27_L001_R1_001.fastq.gz
 OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE1 .fastq.gz).trimmed.fastq.gz
 java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 16 -phred33 \
   $INFILE1 \
   $OUTFILE \
-  ILLUMINACLIP:0.data/adapters.fasta:2:30:10
+  ILLUMINACLIP:/home/mlammer1/software/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
 # Worked! Took about 1 minute
+
+# Run FastQC to check efficacy straight away
+fastqc --outdir 0.data/mlammers_ML01_Juni1/fastqc-trimmed \
+  --threads 16 0.data/mlammers_ML01_Juni1/A006850201_172517_S27_L001_R1_001.trimmed.fastq.gz
+python3 -m multiqc -f --interactive -o 3.results/own_multiqc_reports_trimmed \
+  0.data/mlammers_ML01_*/fastqc-trimmed/A00*_fastqc.zip
 ```
 
 PE mode for Mai11 data set:
