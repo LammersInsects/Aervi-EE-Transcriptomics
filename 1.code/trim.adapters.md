@@ -23,6 +23,9 @@ Read2:
 
 They have been saved in [`0.data/adapters.fasta`](0.data/adapters.fasta).
 
+- Running `trimmomatic` with this set has little effect on the adapter content in the Juni1 data set.
+- Found that sequence GCACACGTCTGAACTCCAGTCAC is overrepresented in the data. This is the reverse complement of the Illumina TruSeq Universal Adapter sequence. Added this to the adapter list.
+
 # Test adapter trimming on a single data set with `trimmomatic`
 
 See the [github source page of trimmomatic](https://github.com/usadellab/Trimmomatic/).
@@ -66,5 +69,5 @@ do
     $INFILE1 \
     $OUTFILE \
     ILLUMINACLIP:0.data/adapters.fasta:2:30:10
-done
+done | tee -a 4.logs/trim.adapters.Juni1.txt 2>&1
 ```
