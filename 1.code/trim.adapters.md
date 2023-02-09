@@ -82,3 +82,22 @@ do
     ILLUMINACLIP:/home/mlammer1/software/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
 done | tee -a 4.logs/trim.adapters.Juni1.txt 2>&1
 ```
+
+
+PE mode for Mai11 data set:
+```bash
+COUNT=0
+TOTAL=$(cat 0.data/Files.info.tab | grep Mai11 | wc -l)
+for INFILE1 in $(cat 0.data/Files.info.tab | grep Mai11 | cut -f1);
+do
+  let COUNT+=1
+  echo Starting file $COUNT of $TOTAL at $(date) ...
+  INFILE2=${INFILE1/L001/L002}
+  OUTFILE=0.data/mlammers_ML01_Mai11/$(basename $INFILE1 .fastq.gz).trimmed
+  java -jar ~/software/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 16 -phred33 \
+    $INFILE1 $INFILE2 \
+    $OUTFILE.forward_paired.fastq.gz $OUTFILE.forward_unpaired.fastq.gz \
+    $OUTFILE.reverse_paired.fastq.gz $OUTFILE.reverse_unpaired.fastq.gz \
+    ILLUMINACLIP:/home/mlammer1/software/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
+done | tee -a 4.logs/trim.adapters.Mai11.txt 2>&1
+```
