@@ -43,7 +43,7 @@ See [`1.code/project.setup.md`](1.code/project.setup.md)
 
 See also `0.data/mlammers_ML01_*/Sample_Names.tab` for specific samples names.
 
-This information is also collated in [`0.data/Sample.info.tab`](0.data/Sample.info.tab) and [`0.data/Files.info.tab`](0.data/Files.info.tab) after running [`1.code/collect.sample.info.R`](1.code/collect.sample.info.R).
+This information is also collated in [`0.data/Sample.info.tab`](0.data/Sample.info.tab) and [`0.data/Files.info.tab`](0.data/Files.info.tab) after running [`1.code/collect.sample.info.Rscript`](1.code/collect.sample.info.Rscript).
 The file [`0.data/Files-Samples.info.tab`](0.data/Files-Samples.info.tab) is a merge of the separate files.
 
 # Handling and assessing raw data
