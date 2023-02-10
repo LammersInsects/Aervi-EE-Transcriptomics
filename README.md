@@ -17,7 +17,7 @@
 - [ ] Data processing
   - [x] ~~Choose software for adapter trimming~~
   - [x] ~~Run adapter trimming on all samples~~
-  - [ ] Re-run FastQC and MultiQC to compare adapter trimming efficacy
+  - [x] ~~Re-run FastQC and MultiQC to compare adapter trimming efficacy~~
   - [x] ~~Choose software for mapping reads to the reference genome~~
   - [ ] Copy latest version of the reference genome into 0.data
   - [ ] Benchmark mapping to reference genome on `jgant3`

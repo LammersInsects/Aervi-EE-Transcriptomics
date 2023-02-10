@@ -88,7 +88,7 @@ PE mode for Mai11 data set:
 ```bash
 COUNT=0
 TOTAL=$(cat 0.data/Files.info.tab | grep Mai11 | wc -l)
-for INFILE1 in $(cat 0.data/Files.info.tab | grep Mai11 | cut -f1);
+for INFILE1 in $(cat 0.data/Files.info.tab | grep Mai11 | cut -f1 | grep L001);
 do
   let COUNT+=1
   echo Starting file $COUNT of $TOTAL at $(date) ...
