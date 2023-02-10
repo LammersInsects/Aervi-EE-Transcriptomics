@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  09.02.2023
+- Last update:  10.02.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -16,7 +16,7 @@
   - [x] ~~Generate new MultiQC results per tissue type~~
 - [ ] Data processing
   - [x] ~~Choose software for adapter trimming~~
-  - [ ] Run adapter trimming on all samples
+  - [x] ~~Run adapter trimming on all samples~~
   - [ ] Re-run FastQC and MultiQC to compare adapter trimming efficacy
   - [x] ~~Choose software for mapping reads to the reference genome~~
   - [ ] Copy latest version of the reference genome into 0.data
