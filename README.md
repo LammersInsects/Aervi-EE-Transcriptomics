@@ -7,13 +7,14 @@
 
 # A flexibly fluctuating but targeted todo-list
 
-- [x] ~~Data handling~~
+- [ ] Data handling
   - [x] ~~Verify data integrity~~
   - [x] ~~Inspect MultiQC output~~
   - [x] ~~Make new FastQC and MultiQC reports~~
   - [x] ~~Import sample information and match with file names~~
   - [x] ~~Make separate MultiQC reports per tissue type~~
   - [x] ~~Generate new MultiQC results per tissue type~~
+  - [ ] Add overview of samples with information on generation and treatment
 - [ ] Data processing
   - [x] ~~Choose software for adapter trimming~~
   - [x] ~~Run adapter trimming on all samples~~
