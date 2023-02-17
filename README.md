@@ -139,14 +139,16 @@ Overview of sequence data quality improvement:
 
 Variable | All before trimming | All after trimming
 ---------|---------------------|-------------------
-Nr samples | 339 |
-% duplicates | 34.8-92.5 |
-%GC | 32-48 |
-Read length | 101 |
-Reads per sample | 2.8-10.7M |
-Mean seq quality | Excellent |
-Adapter content start | Negligible |
-Adapter content end | 5.8-36.4% |
+Nr samples | 331 | 331
+% duplicates | 34.8-92.5 % | 32.6-92.2 %
+GC content | 32-48 % | 30-43 %
+Average read length | 101 bp | 79-99 bp
+Reads per sample | 2.8-10.7M | 2.8-10.6M
+Mean seq quality | Excellent | Excellent
+Adapter content start | Negligible | Negligible
+Adapter content end | 5.8-36.4 % | 1.1-11.9 %
+
+Overall data quality is much improved, seems like the majority of adapters got trimmed. I'm satisfied with this result.
 
 ## Mapping to reference genome
 
