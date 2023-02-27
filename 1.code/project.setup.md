@@ -1,6 +1,12 @@
 # Project Setup
 
-## setup git access
+## Git
+
+```bash
+git --version
+```
+
+### Setup git access
 
 ```bash
 git config --global user.email "marklammers@wwu.de"
@@ -8,7 +14,7 @@ git config --global user.name "mlammer1"
 git config --global credential.helper store
 ```
 
-## setup git preferences
+### Setup git preferences
 
 ```bash
 git config --global alias.unstage 'reset HEAD --'
@@ -19,7 +25,7 @@ git config --global rerere.enabled true
 git config --global pull.rebase true
 ```
 
-## create folders
+### Create folders
 
 ```bash
 mkdir -p /home/mlammer1/Documents/aervi-ee-transcriptomics
@@ -27,7 +33,7 @@ cd $_
 mkdir {0.data,1.code,2.pipeline,3.results,4.logs}
 ```
 
-## inititate git
+### Initiate git
 
 ```bash
 echo "# Aphidius ervi EE transcriptomics" >> README.md
@@ -40,7 +46,10 @@ git remote add origin https://github.com/LammersInsects/Aervi-EE-Transcriptomics
 git push -u origin main
 ```
 
-# Enable R on jgant3
+## Bioinformatics software
+
+### Enable R on jgant3
+
 ```bash
 source /usr/share/modules/init/bash  # enables the module
 module use /global/projects/programs/modules/
