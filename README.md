@@ -22,6 +22,7 @@
   - [x] ~~Choose software for mapping reads to the reference genome~~
   - [x] ~~Install HISAT2~~
   - [ ] Copy latest version of the reference genome into 0.data
+  - [ ] Build index to the reference genome
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
   - [ ] Summarize mapping rates, overall and per tissue type
@@ -128,6 +129,8 @@ Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
 # Data processing
 
 ## Adapter trimming
+
+> Bolger AM, Lohse M & Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina sequence data. Bioinformatics 30:2114–2120.
 
 - Since adapters are present towards the end of up to 36% of the reads, we must run adapter trimming.
   - See [`1.code/trim.adapters.md`](1.code/trim.adapters.md).
