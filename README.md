@@ -105,9 +105,9 @@ cp -v 0.data/mlammers_ML01_Juni1/FastQC/multiqc_report.html 3.results/multiqc_re
 git add -f 3.results/multiqc_report_Mai11.html 3.results/multiqc_report_Juni1.html
 ```
 
-See [`1.code/compare.fastqc.per.tissue.md`](1.code/compare.fastqc.per.tissue.md) for producing MultiQC output per tissue type.
+See [`1.code/compare.fastqc.per.tissue.md`](1.code/compare.fastqc.per.tissue.md) for producing `MultiQC` output per tissue type.
 
-See `3.results/own_multiqc_reports_*` for MultiQC output per tissue type.
+See `3.results/own_multiqc_reports_*` for `MultiQC` output per tissue type.
 
 Overview of sequence data quality:
 
@@ -135,7 +135,7 @@ Adapter content end | Up to 36% | Up to 29% | 10.3-25.4% | 9.2-36.4% | 5.8-29.7%
 - Since adapters are present towards the end of up to 36% of the reads, we must run adapter trimming.
   - See [`1.code/trim.adapters.md`](1.code/trim.adapters.md).
 
-## Re-run FastQC & MultiQC on trimmed fastq reads
+## Re-run `FastQC` & `MultiQC` on trimmed fastq reads
 
 See [`1.code/fastqc.after.trimming.md`](1.code/fastqc.after.trimming.md).
 
@@ -154,9 +154,9 @@ Adapter content end | 5.8-36.4 % | 1.1-11.9 %
 
 Overall data quality is much improved, seems like the majority of adapters got trimmed. I'm satisfied with this result.
 
-## Mapping to reference genome with HISAT2 v2.2.1
+## Mapping to reference genome with `HISAT2 v2.2.1`
 
 > Kim, D., Paggi, J.M., Park, C. et al. Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype. Nat Biotechnol 37, 907–915 (2019). https://doi.org/10.1038/s41587-019-0201-4
 
-- The HISAT2 manual is available [on this website](http://daehwankimlab.github.io/hisat2/manual).
+- The `HISAT2` manual is available [on this website](http://daehwankimlab.github.io/hisat2/manual).
 - Process for installing it on a workstation is described in [`1.code/project.setup.md`](1.code/project.setup.md).
