@@ -21,7 +21,7 @@
   - [x] ~~Re-run FastQC and MultiQC to compare adapter trimming efficacy~~
   - [x] ~~Choose software for mapping reads to the reference genome~~
   - [x] ~~Install HISAT2~~
-  - [ ] Copy latest version of the reference genome into 0.data
+  - [x] ~~Copy latest version of the reference genome into 0.data~~
   - [ ] Build index to the reference genome
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
@@ -160,3 +160,10 @@ Overall data quality is much improved, seems like the majority of adapters got t
 
 - The `HISAT2` manual is available [on this website](http://daehwankimlab.github.io/hisat2/manual).
 - Process for installing it on a workstation is described in [`1.code/project.setup.md`](1.code/project.setup.md).
+
+Copy the reference genome into the data folder:
+```bash
+mkdir 0.data/ref-genome
+cp -rv ~/Documents/aervi-genome/v3.0/* 0.data/ref-genome/
+rm -v 0.data/ref-genome/ref-genome-bowtie2-index.* #delete old bowtie indices
+```
