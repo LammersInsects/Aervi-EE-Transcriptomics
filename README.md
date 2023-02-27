@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  17.02.2023
+- Last update:  27.02.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -20,6 +20,7 @@
   - [x] ~~Run adapter trimming on all samples~~
   - [x] ~~Re-run FastQC and MultiQC to compare adapter trimming efficacy~~
   - [x] ~~Choose software for mapping reads to the reference genome~~
+  - [x] ~~Install HISAT2~~
   - [ ] Copy latest version of the reference genome into 0.data
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
@@ -150,6 +151,9 @@ Adapter content end | 5.8-36.4 % | 1.1-11.9 %
 
 Overall data quality is much improved, seems like the majority of adapters got trimmed. I'm satisfied with this result.
 
-## Mapping to reference genome
+## Mapping to reference genome with HISAT2 v2.2.1
 
-TODO wit HISAT2
+> Kim, D., Paggi, J.M., Park, C. et al. Graph-based genome alignment and genotyping with HISAT2 and HISAT-genotype. Nat Biotechnol 37, 907–915 (2019). https://doi.org/10.1038/s41587-019-0201-4
+
+- The HISAT2 manual is available [on this website](http://daehwankimlab.github.io/hisat2/manual).
+- Process for installing it on a workstation is described in [`1.code/project.setup.md`](1.code/project.setup.md).

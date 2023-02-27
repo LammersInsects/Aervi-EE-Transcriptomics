@@ -56,3 +56,15 @@ module use /global/projects/programs/modules/
 module load dev/R
 ```
 
+### Install HISAT2 on jgant3
+
+```bash
+#download the installer for linux into software folder:
+cd ~/software
+curl -s https://cloud.biohpc.swmed.edu/index.php/s/oTtGWbWjaxsQ2Ho/download > hisat2-2.2.1-Linux_x86_64.zip
+#then unzip it
+unzip hisat2-2.2.1-Linux_x86_64.zip
+#add the folder to PATH:
+echo 'export PATH="$HOME/software/hisat2-2.2.1:$PATH"' >>~/.bashrc
+source ~/.bashrc
+```
