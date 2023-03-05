@@ -68,3 +68,6 @@ unzip hisat2-2.2.1-Linux_x86_64.zip
 echo 'export PATH="$HOME/software/hisat2-2.2.1:$PATH"' >>~/.bashrc
 source ~/.bashrc
 ```
+
+- By default, `HISAT2` uses `#!/usr/bin/env python` as shebang. It may be necessary to change the shebang to the output `which python3`.
+  - This is the case for `hisat2-huild` on `jgant3`.
