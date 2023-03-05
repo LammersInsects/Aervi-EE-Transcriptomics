@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  27.02.2023
+- Last update:  05.03.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -22,7 +22,7 @@
   - [x] ~~Choose software for mapping reads to the reference genome~~
   - [x] ~~Install HISAT2~~
   - [x] ~~Copy latest version of the reference genome into 0.data~~
-  - [ ] Build index to the reference genome
+  - [x] Build index to the reference genome
   - [ ] Benchmark mapping to reference genome on `jgant3`
   - [ ] Map all reads to the reference genome
   - [ ] Summarize mapping rates, overall and per tissue type
@@ -167,3 +167,5 @@ mkdir 0.data/ref-genome
 cp -rv ~/Documents/aervi-genome/v3.0/* 0.data/ref-genome/
 rm -v 0.data/ref-genome/ref-genome-bowtie2-index.* #delete old bowtie indices
 ```
+
+See [`1.data/map.reads.md`](1.data/map.reads.md) for the full process of building the index and mapping all reads.
