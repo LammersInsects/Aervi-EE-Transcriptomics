@@ -168,4 +168,4 @@ cp -rv ~/Documents/aervi-genome/v3.0/* 0.data/ref-genome/
 rm -v 0.data/ref-genome/ref-genome-bowtie2-index.* #delete old bowtie indices
 ```
 
-See [`1.data/map.reads.md`](1.data/map.reads.md) for the full process of building the index and mapping all reads.
+See [`1.code/map.reads.md`](1.code/map.reads.md) for the full process of building the index and mapping all reads.
