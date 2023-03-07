@@ -23,7 +23,7 @@
   - [x] ~~Install HISAT2~~
   - [x] ~~Copy latest version of the reference genome into 0.data~~
   - [x] ~~Build index to the reference genome~~
-  - [ ] Benchmark mapping to reference genome on `jgant3`
+  - [x] ~~Benchmark mapping to reference genome on `jgant3`~~
   - [ ] Map all reads to the reference genome
   - [ ] Summarize mapping rates, overall and per tissue type
 - [ ] DGE analysis
