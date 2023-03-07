@@ -53,5 +53,48 @@ find . -name "*map*"
 # Use a for loop to align all samples
 
 ## Juni1
+```bash
+COUNT=0
+TOTAL=$(ls 0.data/mlammers_ML01_Juni1/*trimmed.fastq.gz | wc -l)
+for INFILE in $(ls 0.data/mlammers_ML01_Juni1/*trimmed.fastq.gz);
+do
+  let COUNT+=1
+  echo Starting file $COUNT of $TOTAL ...
+  OUTFILE=0.data/mlammers_ML01_Juni1/$(basename $INFILE .trimmed.fastq.gz).mapped
+  LOGFILE=4.logs/mapping.reads.log
+  echo At $(date +%Y-%m-%dT%H:%M:%S%z), starting file $INFILE ... >>$LOGFILE
+  hisat2 -t -p 16 -q --phred33 \
+  --summary-file 4.logs/$(basename $OUTFILE).summary.txt --met-file 4.logs/$(basename $OUTFILE).metrics.txt \
+  -x 0.data/ref-genome/OGS3.0_20161222.index \
+  -U $INFILE \
+  -S $OUTFILE.sam
+  #Receiving again many warnings that reads are discarded because of their length!
+  echo At $(date +%Y-%m-%dT%H:%M:%S%z), finished mapping >>$LOGFILE
+done
+```
 
 ## Mai11
+```bash
+COUNT=0
+TOTAL=$(ls 0.data/mlammers_ML01_Mai11/*trimmed.paired* | grep L001 | wc -l)
+for INFILE1 in $(ls 0.data/mlammers_ML01_Mai11/*trimmed.paired* | grep L001);
+do
+  let COUNT+=1
+  echo Starting file $COUNT of $TOTAL ...
+  INFILE2=${INFILE1/L001/L002}
+  OUTFILE=0.data/mlammers_ML01_Mai11/$(basename $INFILE1 .trimmed.paired.fastq.gz).mapped
+  LOGFILE=4.logs/mapping.reads.log
+  echo At $(date +%Y-%m-%dT%H:%M:%S%z), starting file $INFILE1 ... >>$LOGFILE
+  hisat2 -t -p 16 -q --phred33 \
+  --summary-file 4.logs/$(basename $OUTFILE).summary.txt --met-file 4.logs/$(basename $OUTFILE).metrics.txt \
+  -x 0.data/ref-genome/OGS3.0_20161222.index \
+  -1 $INFILE1 \
+  -2 $INFILE2 \
+  --un-gz $OUTFILE.unp.unal \
+  --al-gz $OUTFILE.unp.al \
+  --un-conc-gz $OUTFILE.unc.unal \
+  --al-conc-gz $OUTFILE.unc.al \
+  -S $OUTFILE.sam
+  #Receiving again many warnings that reads are discarded because of their length!
+  echo At $(date +%Y-%m-%dT%H:%M:%S%z), finished mapping file $COUNT of $TOTAL >>$LOGFILE
+done

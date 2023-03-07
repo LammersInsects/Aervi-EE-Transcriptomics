@@ -24,7 +24,7 @@
   - [x] ~~Copy latest version of the reference genome into 0.data~~
   - [x] ~~Build index to the reference genome~~
   - [x] ~~Benchmark mapping to reference genome on `jgant3`~~
-  - [ ] Map all reads to the reference genome
+  - [x] ~~Map all reads to the reference genome~~
   - [ ] Summarize mapping rates, overall and per tissue type
 - [ ] DGE analysis
   - [ ] Choose pipeline
@@ -53,9 +53,9 @@ The file [`0.data/Files-Samples.info.tab`](0.data/Files-Samples.info.tab) is a m
 
 ## Retrieve data
 
-For the instructions on the first, big, Mai11 dataset, see [`0.data/instructions_big_data_set.txt`](0.data/instructions_big_data_set.txt).
+For the instructions on the first, big, Mai11 dataset, see `0.data/instructions_big_data_set.txt`.
 
-For the instruction on the second, small, Juni1 dataset, see [`0.data/instructions_small_data_set.txt`](0.data/instructions_small_data_set.txt).
+For the instruction on the second, small, Juni1 dataset, see `0.data/instructions_small_data_set.txt`.
 
 The small data set (Juni1) contains data on 19 samples which were resequenced because ***CHECK***.
 Interestingly, there are no _L002_ files for these runs.
