@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  07.03.2023
+- Last update:  21.03.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -29,6 +29,7 @@
 - [ ] DGE analysis
   - [ ] Choose pipeline
   - [ ] Calculate FPKM
+  - [ ] Draft hypotheses
 
 
 # Project Setup
