@@ -52,6 +52,8 @@ The file [`0.data/Files-Samples.info.tab`](0.data/Files-Samples.info.tab) is a m
 
 ## Overview of samples
 
+Using `R`, extract the sample information from the [detailed overview](0.data/Pools.csv):
+
 ```R
 df<-read.table('0.data/Pools.csv',sep=';',header=T)
 table(df$Treatment, df$Family)
