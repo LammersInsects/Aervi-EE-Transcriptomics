@@ -50,6 +50,17 @@ See also `0.data/mlammers_ML01_*/Sample_Names.tab` for specific samples names.
 This information is also collated in [`0.data/Sample.info.tab`](0.data/Sample.info.tab) and [`0.data/Files.info.tab`](0.data/Files.info.tab) after running [`1.code/collect.sample.info.Rscript`](1.code/collect.sample.info.Rscript).
 The file [`0.data/Files-Samples.info.tab`](0.data/Files-Samples.info.tab) is a merge of the separate files.
 
+## Overview of samples
+
+```R
+df<-read.table('0.data/Pools.csv',sep=';',header=T)
+table(df$Treatment, df$Family)
+write.table(table(df$Treatment, df$Family),'test.txt',sep=' | ',row.names=T,quote=F)
+```
+
+The output (with the column names manually edited):
+
+
 # Handling and assessing raw data
 
 ## Retrieve data

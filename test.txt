@@ -1,0 +1,15 @@
+F34 | F39
+FA-FA | 3 | 2
+FA-FA-FA | 2 | 1
+FA-FA-PA | 2 | 1
+FA-PA | 3 | 2
+FA-PA-FA | 2 | 1
+FA-PA-PA | 2 | 1
+G(FA)-FA | 2 | 0
+G(FA)-PA | 2 | 0
+PA-FA | 4 | 3
+PA-FA-FA | 2 | 1
+PA-FA-PA | 2 | 1
+PA-PA | 4 | 3
+PA-PA-FA | 2 | 1
+PA-PA-PA | 2 | 1
