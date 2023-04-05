@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  21.03.2023
+- Last update:  05.04.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -14,7 +14,7 @@
   - [x] ~~Import sample information and match with file names~~
   - [x] ~~Make separate MultiQC reports per tissue type~~
   - [x] ~~Generate new MultiQC results per tissue type~~
-  - [ ] Add overview of samples with information on generation and treatment
+  - [x] ~~Add overview of samples with information on generation and treatment~~
 - [ ] Data processing
   - [x] ~~Choose software for adapter trimming~~
   - [x] ~~Run adapter trimming on all samples~~
@@ -58,7 +58,24 @@ table(df$Treatment, df$Family)
 write.table(table(df$Treatment, df$Family),'test.txt',sep=' | ',row.names=T,quote=F)
 ```
 
-The output (with the column names manually edited):
+The output (with the column names manually edited, row order changed, and lines removed from treatment names):
+
+Line | Treatment | F34 | F39
+-----|-----------|-----|----
+PA | PA | 4 | 3
+PA | PA-PA | 2 | 1
+PA | PA-FA | 2 | 1
+PA | FA | 4 | 3
+PA | FA-FA | 2 | 1
+PA | FA-PA | 2 | 1
+FA | FA | 3 | 2
+FA | FA-FA | 2 | 1
+FA | FA-PA | 2 | 1
+FA | PA | 3 | 2
+FA | PA-PA | 2 | 1
+FA | PA-FA | 2 | 1
+G(FA) | PA | 2 | 0
+G(FA) | FA | 2 | 0
 
 
 # Handling and assessing raw data
