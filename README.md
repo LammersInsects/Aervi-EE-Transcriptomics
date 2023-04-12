@@ -62,23 +62,30 @@ write.table(table(df$Treatment, df$Family),'test.txt',sep=' | ',row.names=T,quot
 
 The output (with the column names manually edited, row order changed, and lines removed from treatment names):
 
-Line | Treatment | F34 | F39
+Line | Generation | Treatment | Conditioned | Experience | F34 | F39
 -----|-----------|-----|----
-PA | PA | 4 | 3
-PA | PA-PA | 2 | 1
-PA | PA-FA | 2 | 1
-PA | FA | 4 | 3
-PA | FA-FA | 2 | 1
-PA | FA-PA | 2 | 1
-FA | FA | 3 | 2
-FA | FA-FA | 2 | 1
-FA | FA-PA | 2 | 1
-FA | PA | 3 | 2
-FA | PA-PA | 2 | 1
-FA | PA-FA | 2 | 1
-G(FA) | PA | 2 | 0
-G(FA) | FA | 2 | 0
+PA | 22 | PA | PA | PA | 4 | 3
+PA | 23 | PA-PA | PA | PA | 2 | 1
+PA | 23 | PA-FA | PA | FA | 2 | 1
+PA | 22 | FA | FA | FA | 4 | 3
+PA | 23 | FA-FA | FA | FA | 2 | 1
+PA | 23 | FA-PA | FA | PA | 2 | 1
+FA | 22 | FA | FA | FA | 3 | 2
+FA | 23 | FA-FA | FA | FA | 2 | 1
+FA | 23 | FA-PA | FA | PA | 2 | 1
+FA | 22 | PA | PA | PA | 3 | 2
+FA | 22 | PA-PA | PA | PA | 2 | 1
+FA | 22 | PA-FA | PA | FA | 2 | 1
+G(FA) | PA | PA | PA | 2 | 0
+G(FA) | FA | FA | FA | 2 | 0
 
+Where:
+- Line is the population of wasps where the females were taken from. PA/FA refers to the host on which they were bred from generation 17 to 22.
+- Generation is the generation numbers since they were bred in the IEB.
+- Treatment is the abbreviated name of the treatments as used in the logs.
+- Conditioned refers to the host species those individuals themselves emerged from.
+- Experience refers to the host species on which those individuals were allowed to oviposit.
+- F34 and F39 are two independently established strains. In these columns is listed how many pools were sequenced per strain-line-treatment combination.
 
 # Handling and assessing raw data
 
