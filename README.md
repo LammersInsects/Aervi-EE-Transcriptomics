@@ -63,7 +63,7 @@ write.table(table(df$Treatment, df$Family),'test.txt',sep=' | ',row.names=T,quot
 The output (with the column names manually edited, row order changed, and lines removed from treatment names):
 
 Line | Generation | Treatment | Conditioned | Experience | F34 | F39
------|-----------|-----|----
+-----|------------|-----------|-------------|------------|-----|-----
 PA | 22 | PA | PA | PA | 4 | 3
 PA | 23 | PA-PA | PA | PA | 2 | 1
 PA | 23 | PA-FA | PA | FA | 2 | 1
