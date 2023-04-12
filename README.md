@@ -80,7 +80,7 @@ G(FA) | 22 | PA | PA | PA | 2 | 0
 G(FA) | 22 | FA | FA | FA | 2 | 0
 
 Where:
-- Line is the population of wasps where the females were taken from. PA/FA refers to the host on which they were bred from generation 17 to 22.
+- Line is the population of wasps where the females were taken from. PA/FA refers to the host on which they were bred from generation 17 to 22. G() is a treatment in which wasps were forced to switch hosts every generation with the last host mentioned between brackets.
 - Generation is the generation numbers since they were bred in the IEB.
 - Treatment is the abbreviated name of the treatments as used in the logs.
 - Conditioned refers to the host species those individuals themselves emerged from.
