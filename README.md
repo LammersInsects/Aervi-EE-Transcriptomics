@@ -76,8 +76,8 @@ FA | 23 | FA-PA | FA | PA | 2 | 1
 FA | 22 | PA | PA | PA | 3 | 2
 FA | 22 | PA-PA | PA | PA | 2 | 1
 FA | 22 | PA-FA | PA | FA | 2 | 1
-G(FA) | PA | PA | PA | 2 | 0
-G(FA) | FA | FA | FA | 2 | 0
+G(FA) | 22 | PA | PA | PA | 2 | 0
+G(FA) | 22 | FA | FA | FA | 2 | 0
 
 Where:
 - Line is the population of wasps where the females were taken from. PA/FA refers to the host on which they were bred from generation 17 to 22.
