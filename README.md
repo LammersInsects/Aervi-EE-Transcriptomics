@@ -3,11 +3,11 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  05.04.2023
+- Last update:  15.08.2023
 
 # A flexibly fluctuating but targeted todo-list
 
-- [ ] Data handling
+- [x] ~~Data handling~~
   - [x] ~~Verify data integrity~~
   - [x] ~~Inspect MultiQC output~~
   - [x] ~~Make new FastQC and MultiQC reports~~
@@ -26,6 +26,7 @@
   - [x] ~~Benchmark mapping to reference genome on `jgant3`~~
   - [x] ~~Map all reads to the reference genome~~
   - [ ] Summarize mapping rates, overall and per tissue type
+  - [ ] Count reads per gene with HTSeq
 - [ ] DGE analysis
   - [ ] Choose pipeline
   - [ ] Calculate FPKM
@@ -207,3 +208,37 @@ rm -v 0.data/ref-genome/ref-genome-bowtie2-index.* #delete old bowtie indices
 ```
 
 See [`1.code/map.reads.md`](1.code/map.reads.md) for the full process of building the index and mapping all reads.
+
+Note that the file extensions are missing in the output files. They are BAM files.
+
+## Summarizing mapping rates
+
+TODO
+
+## Counting reads per annotated gene feature
+
+### Install and verify software
+
+```bash
+python3 --version
+pip install HTSeq
+python3 -m HTSeq.scripts.count --version
+```
+
+Python should be version 3.4 or above. I have Python 3.10.12.
+HTSeq is version 2.0.4.
+
+### Extract gene features from reference genome
+
+TODO
+
+### Run a test on a single file
+
+```bash
+python3 -m HTSeq.scripts.count \
+   -f bam \ #[options]
+   \ #<alignment_files>
+   0.data/ref-genome/OGS3.0_20161222.gff3 #<gff_file>
+```
+
+### Use a for loop to count reads for all files
