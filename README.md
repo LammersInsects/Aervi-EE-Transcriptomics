@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  15.08.2023
+- Last update:  06.09.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -28,7 +28,7 @@
   - [ ] Summarize mapping rates, overall and per tissue type
   - [ ] Count reads per gene with HTSeq
 - [ ] DGE analysis
-  - [ ] Choose pipeline
+  - [x] ~~Choose pipeline (DESeq2)~~
   - [ ] Calculate FPKM
   - [ ] Draft hypotheses
 
@@ -209,7 +209,7 @@ rm -v 0.data/ref-genome/ref-genome-bowtie2-index.* #delete old bowtie indices
 
 See [`1.code/map.reads.md`](1.code/map.reads.md) for the full process of building the index and mapping all reads.
 
-Note that the file extensions are missing in the output files. They are BAM files.
+Note that the file extensions are missing in the output files of the unpaired and unaligned reads. They are gzip-compressed SAM files.
 
 ## Summarizing mapping rates
 
@@ -227,6 +227,7 @@ python3 -m HTSeq.scripts.count --version
 
 Python should be version 3.4 or above. I have Python 3.10.12.
 HTSeq is version 2.0.4.
+See [the HTSeq manual](https://htseq.readthedocs.io/en/release_0.11.1/count.html)
 
 ### Extract gene features from reference genome
 
