@@ -282,3 +282,34 @@ Sum of counts | 374852 | 700722
 Decision: run all with stranded=no
 
 ### Use a for loop to count reads for all files
+
+```bash
+mkdir 0.data/htseq-counts;
+echo "Input;Start;Finish;Input.file.size;Output.file.size" >0.data/htseq-counts/logfile-htseq.csv;
+for FILE in $(ls 0.data/*/*.mapped.sam); do
+START=$(date +%Y%m%d%H%M%S);
+echo Sorting $FILE ...
+samtools sort -n $FILE -o $FILE.sorted
+echo Started running htseq-count on sorted HISAT2-output of $FILE at $START ...;
+OUTPUT=0.data/htseq-counts/$(basename $FILE).counts
+python3 -m HTSeq.scripts.count \
+   --format=bam \
+   --stranded=no \
+   --type=exon \
+   --idattr=ID \
+   $FILE.sorted \
+   $GFF.exons >$FILE.counts
+FINISH=$(date +%Y%m%d%H%M%S);
+INPUTFS=$(du -c $FILE.sorted | tail -n 1 | cut -f1); #input file size in kb;
+OUTPUTFS=$(du $FILE.counts | tail -n 1 | cut -f1); #output file size in kb;
+echo "$FILE;$START;$FINISH;$INPUTFS;$OUTPUTFS" >>0.data/htseq-counts/logfile-htseq.csv;
+echo Done with $FILE at $FINISH;
+done
+
+less 0.data/htseq-counts/logfile-htseq.csv
+```
+
+
+### Add up all counts of exons per gene
+
+TODO
