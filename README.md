@@ -231,7 +231,10 @@ See [the HTSeq manual](https://htseq.readthedocs.io/en/release_0.11.1/count.html
 
 ### Extract gene features from reference genome
 
-TODO
+```bash
+GFF=0.data/ref-genome/OGS3.0_20161222.gff3
+cat $GFF | grep -P '\texon\t' >$GFF.exons
+```
 
 ### Run a test on a single file
 
