@@ -239,10 +239,46 @@ cat $GFF | grep -P '\texon\t' >$GFF.exons
 ### Run a test on a single file
 
 ```bash
+FILE=0.data/mlammers_ML01_Mai11/A006850198_172721_S292_L001_R1_001.mapped.sam
+samtools sort -n $FILE -o $FILE.sorted
+#May need to use samtools view -h $FILE.sorted and pipe that into htseq-count, so far fine without
 python3 -m HTSeq.scripts.count \
-   -f bam \ #[options]
-   \ #<alignment_files>
-   0.data/ref-genome/OGS3.0_20161222.gff3 #<gff_file>
+   --format=bam \
+   --stranded=yes \ #may need to change this
+   --type=exon \
+   --idattr=ID \
+   $FILE.sorted \
+   $GFF.exons >$FILE.counts
+#Warning: 5541620 reads with missing mate encountered.
+#11586546 alignment record pairs processed.
+
+#Overview of metrics from running without samtools view:
+cat $FILE.counts | wc -l
+#95294
+awk '{s+=$2} END {print s}' $FILE.counts
+#11586546
+tail -n 5 $FILE.counts
+#__no_feature    4183695
+#__ambiguous     69439
+#__too_low_aQual 0
+#__not_aligned   6044926
+#__alignment_not_unique  913634
+cat $FILE.counts | head -n 95289 | awk '{s+=$2} END {print s}' -
+#374852
 ```
+
+Using samtools view gives the same output so can be left out.
+Using stranded=no gives different output, nearly double the reads can be assigned to a feature, while doubling the number of ambiguous ones:
+
+Variable | stranded=yes | stranded=no
+---|---|---
+__no_feature | 4183695 | 3767815
+__ambiguous | 69439 | 159449
+__too_low_aQual | 0 | 0
+__not_aligned | 6044926 | 6044926
+__alignment_not_unique | 913634 | 913634
+Sum of counts | 374852 | 700722
+
+Decision: run all with stranded=no
 
 ### Use a for loop to count reads for all files
