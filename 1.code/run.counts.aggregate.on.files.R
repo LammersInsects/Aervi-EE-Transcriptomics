@@ -1,0 +1,15 @@
+# Written by Mark Lammers; Institute for Evolution and Biodiversity, University of Münster; marklammers6@gmail.com
+# (c) 2023. Released under the terms of the GNU General Public License v3.
+
+#load function
+source('1.code/counts.aggregate.R')
+
+#import file list
+files<-list.files(getwd(), pattern='sam.counts$', recursive = T)
+
+#run function on each file
+for(filename in files){
+  res<-counts.aggregate(filename = filename, ID.nchar = 9)
+  outfile<-paste0(filename, '.by.gene')
+  write.table(res, outfile, sep = '\t', row.names = F, col.names = F, quote = F)
+}
