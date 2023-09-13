@@ -10,7 +10,7 @@ counts.aggregate<-function(filename, ID.nchar){
   counts.per.exon<-counts.per.exon[1:(nrow(counts.per.exon)-5),]
   
   #exclude exons with zero reads
-  counts.per.exon<-counts.per.exon[counts.per.exon[,2]>0,]
+  #counts.per.exon<-counts.per.exon[counts.per.exon[,2]>0,]
   
   #for this file, most genes only have expressiond data for one exon, but some for up to 14 exons:
   table(as.data.frame(table(substring(counts.per.exon[,1],0,ID.nchar)))[,2])
