@@ -3,7 +3,7 @@
 
 - By Mark Lammers ©, marklammers@uni-muenster.de
 - Repo started: 01.02.2023 ('%d.%m.%Y')
-- Last update:  06.09.2023
+- Last update:  13.09.2023
 
 # A flexibly fluctuating but targeted todo-list
 
@@ -26,11 +26,15 @@
   - [x] ~~Benchmark mapping to reference genome on `jgant3`~~
   - [x] ~~Map all reads to the reference genome~~
   - [ ] Summarize mapping rates, overall and per tissue type
-  - [ ] Count reads per gene with HTSeq
+  - [x] ~~Count reads per gene with HTSeq~~
+  - [ ] Decide whether or not to merge Mai11 and June1 data
 - [ ] DGE analysis
   - [x] ~~Choose pipeline (DESeq2)~~
   - [ ] Calculate FPKM
   - [ ] Draft hypotheses
+  - [ ] Test DESeq2 pipeline on comparison of FFF vs PPP of heads
+  - [ ] Compare FFF to PPP for all tissues
+  - [ ] PCA or similar of all available samples
 
 
 # Project Setup
@@ -312,4 +316,5 @@ less 0.data/htseq-counts/logfile-htseq.csv
 
 ### Add up all counts of exons per gene
 
-TODO
+Use [1.code/run.counts.aggregate.on.files.R](1.code/run.counts.aggregate.on.files.R) to call [1.code/counts.aggregate.R](1.code/counts.aggregate.R) on all HTSeq output (i.e. files with counts by exon).
+Output is stored in [0.data/htseq-counts](0.data/htseq-counts) and added to the git repo.
