@@ -10,6 +10,7 @@ files<-list.files(getwd(), pattern='sam.counts$', recursive = T)
 #run function on each file
 for(filename in files){
   res<-counts.aggregate(filename = filename, ID.nchar = 9)
-  outfile<-paste0(filename, '.by.gene')
+  outfile<-unlist(strsplit(filename, '/', fixed=T))[3]
+  outfile<-paste0('0.data/htseq-counts/',outfile, '.by.gene')
   write.table(res, outfile, sep = '\t', row.names = F, col.names = F, quote = F)
 }
